@@ -26,7 +26,6 @@ box-shadow: 2px 2px 10px 1px #797878;
 justify-content: center;
 }
 .cardStyle:hover {
-    
     border: 3px solid #141414;
     color: #0f0f0f;
 }
@@ -57,9 +56,8 @@ justify-content: center;
  
 }
 
-.productDescription{
-    font-size: 2em;
+.productDetail{
+    font-size: 5em;
     font-weight: normal;
-    margin-top: 20px;
-    margin-right: 20px;
+    color: black;
 }
