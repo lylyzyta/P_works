@@ -13,25 +13,20 @@ function ProductList() {
  
   return (
     <section className={styles.productsContainer}>
-       <section >
-       <div className={styles.cardContainer}>
-         {products.map((product) => (
+                 {products.map((product) => (
             <section  className={styles.cardStyle} key={product.id} >
              <>
-             <img
-               className={styles.productsImg}
-               src={product.img}
-               alt="logo-icon"
-             />
-              <span  className={styles.productsTitle}>{product.title}</span>
-             <span className={styles.productPrice}>$ {product.price}</span> 
-                           
-            
+             <img className={styles.productsImg} src={product.img}
+               alt="logo-icon"/>
+               <br></br>
+               <br></br>
+            <span  className={styles.productsTitle}>{product.title}</span>
+            <span className={styles.productsPrice}>Precio : $ {product.price}</span> 
            </>
            </section>
          ))}
-       </div>
-     </section>
+
+  
    </section>
  );
 }
