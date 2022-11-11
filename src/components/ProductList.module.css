@@ -1,0 +1,48 @@
+
+.productsContainer{
+    color: #5A5A5A;
+    background-color: #fffffe;
+    width: 100%;
+  
+}
+
+.cardContainer{
+  display: grid;
+  grid-template-columns:33% 33% 33%;
+  width:98%;
+  justify-items:center;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.cardStyle{
+    display: grid;
+   grid-template-rows: 60% 20% 20%;
+   box-shadow: 2px 2px 5px 1px #52cdc4;
+    width: 30vw;
+    height: 30vh;
+    color: #2B2C34;
+    background-color: #fffffe;
+    border-radius: 10px;
+    justify-items:center;
+    
+    }
+.productsImg{
+    width: 40%;
+  
+}
+.productsTitle{
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: left;
+  
+}
+.productDescription{
+    font-size: 12px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.productsPrice{
+    font-size: 12px;
+}
