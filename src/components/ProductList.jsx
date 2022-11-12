@@ -15,16 +15,27 @@ function ProductList() {
 
   const [isOpen, setIsOpen] = useState(false);
  const [uniqueProduct, setUniqueProduct] = useState([]);
+ const [ search, setSearch ] = useState("");
+
   const togglePopup = (productID) => {
     setIsOpen(!isOpen);
     fetch(`https://gnk.onm.mybluehost.me/products_api/${productID}`)
     .then((response) => response.json())
-    .then((data) => setUniqueProduct(data));
+    .then((data) => setUniqueProduct(data.description));
   };
  
+  const searcher = (e) => {
+    setSearch(e.target.value)
+    console.log(e.target.value);
+  }
+
+ const results = !search ? products : products.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
+
   return (
+    <div>
+    <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
     <section className={styles.productsContainer}>
-                 {products.map((product) => (
+                 {results.map((product) => (
             <section  className={styles.cardStyle} key={product.id}  >
              <>
              <img className={styles.productsImg} src={product.img}
@@ -71,6 +82,7 @@ function ProductList() {
 
   
    </section>
+   </div>
  );
 }
 
