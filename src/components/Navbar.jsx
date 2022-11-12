@@ -1,14 +1,12 @@
 import styles from './Navbar.module.css'
+import logo from '../image/logo.png'
 
 const Navbar = () => {
 
     return (
        <section className={styles.navContainer}>
-        <nav className={styles.navLogo}>Nombre Tienda </nav>
-        <nav className={styles.navMenu}>Home </nav>
-        <nav className={styles.navMenu}>Category</nav>
-        <nav className={styles.navMenu}>About Me</nav>
-        </section>
+        <img class={styles.navLogo} src={logo} alt='logo'/>
+      </section>
 
     )
 }

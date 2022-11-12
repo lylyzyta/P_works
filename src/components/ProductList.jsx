@@ -32,8 +32,8 @@ function ProductList() {
  const results = !search ? products : products.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
 
   return (
-    <div>
-    <input value={search} onChange={searcher} type="text" placeholder='Search' className='form-control'/>
+    <div className={styles.listContainer}>
+    <input className={styles.inputContainer} value={search} onChange={searcher} type="text" placeholder='Search....'/>
     <section className={styles.productsContainer}>
                  {results.map((product) => (
             <section  className={styles.cardStyle} key={product.id}  >
@@ -47,7 +47,7 @@ function ProductList() {
            </>
 
            <button
-                    className={styles.productAdd}
+                    className={styles.btnDetail}
                     onClick={() => togglePopup(product.id)}
                   >
                     {" "}
