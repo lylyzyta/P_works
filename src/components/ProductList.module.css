@@ -99,7 +99,10 @@ justify-content: center;
   }
 
 .productDetail{
-    font-size: 5em;
-    font-weight: normal;
     color: black;
+    background: #E4E5E9;
+    font-size: 0.9em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    line-height: 25px;
 }

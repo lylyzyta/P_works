@@ -14,14 +14,14 @@ function ProductList() {
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
- const [uniqueProduct, setUniqueProduct] = useState([]);
+const [uniqueProduct, setUniqueProduct] =useState();
  const [ search, setSearch ] = useState("");
 
-  const togglePopup = (productID) => {
+  const togglePopup = (productId) => {
     setIsOpen(!isOpen);
-    fetch(`https://gnk.onm.mybluehost.me/products_api/${productID}`)
-    .then((response) => response.json())
-    .then((data) => setUniqueProduct(data.description));
+    const producto = products.filter((producto) => producto.id === productId)[0];
+    setUniqueProduct(producto.description);
+   // setUniqueProduct([producto]);
   };
  
   const searcher = (e) => {
@@ -44,7 +44,8 @@ function ProductList() {
                <br></br>
             <span  className={styles.productsTitle}>{product.title}</span>
             <span className={styles.productsPrice}>Precio : $ {product.price}</span> 
-           </>
+         
+         
 
            <button
                     className={styles.btnDetail}
@@ -59,8 +60,7 @@ function ProductList() {
                       content={
                         <>
                           <b className={styles.productDetail}>
-                          {uniqueProduct}
-                          
+                          {uniqueProduct}                     
                           </b>
                           <br></br>
                           <br></br>
@@ -77,6 +77,7 @@ function ProductList() {
                       handleClose={togglePopup}
                     />
                   )}
+                    </>
            </section>
          ))}
 
