@@ -3,15 +3,24 @@ import { useEffect, useState } from "react";
 import getProducts from "../helpers/api";
 import styles from "./ProductList.module.css";
 import Popup from "./Popup";
+import { TinyButton as ScrollUpButton} from "react-scroll-up-button";
+
+
 
 
 function ProductList() {
+
+  
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts("https://gnk.onm.mybluehost.me/products_api/").then((json) =>
       setProducts(json)
     );
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const [isOpen, setIsOpen] = useState(false);
 const [uniqueProduct, setUniqueProduct] =useState();
@@ -21,10 +30,9 @@ const [uniqueProduct, setUniqueProduct] =useState();
     setIsOpen(!isOpen);
     const producto = products.filter((producto) => producto.id === productId)[0];
     setUniqueProduct(producto.description);
-   // setUniqueProduct([producto]);
   };
  
-  const searcher = (e) => {
+  const searcher = (e) => { 
     setSearch(e.target.value)
     console.log(e.target.value);
   }
@@ -32,9 +40,13 @@ const [uniqueProduct, setUniqueProduct] =useState();
  const results = !search ? products : products.filter((dato)=> dato.title.toLowerCase().includes(search.toLocaleLowerCase()))
 
   return (
+
+ 
     <div className={styles.listContainer}>
+           
     <input className={styles.inputContainer} value={search} onChange={searcher} type="text" placeholder='Search....'/>
-    <section className={styles.productsContainer}>
+       <section className={styles.productsContainer}>
+       <ScrollUpButton />
                  {results.map((product) => (
             <section  className={styles.cardStyle} key={product.id}  >
              <>
@@ -81,10 +93,11 @@ const [uniqueProduct, setUniqueProduct] =useState();
            </section>
          ))}
 
+    </section>
   
-   </section>
    </div>
  );
 }
+
 
 export { ProductList };
