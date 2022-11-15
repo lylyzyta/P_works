@@ -10,9 +10,7 @@
 
 
 
-##### 5. URL del repositorio git (Github, Gitlab, Bitbucket)
-
-R## 1. Definición del producto
+### 1. Definición del producto
 
 Realizar una página web para una tienda en la línea.
 
@@ -23,6 +21,7 @@ Características de aplicación:
 + Método de paginación a elección del desarrollador (Infinite scroll deseable).
 + Método de filtrado dinámico, al tener un grupo de caracteres o palabra mayor a 3 caracteres la vista de productos debe mostrar los resultados.
 + Al seleccionar un producto de la vista de producto sus características deben mostrarse sobre el componente correspondiente al detalle del producto.
+
 
 ### 2. Diseño de la Interfaz de Usuario
 
@@ -57,9 +56,6 @@ Las tecnologías utilizadas en el presente proyecto son las siguientes:
 + Abrir carpeta local con visual studio code.
 + En terminal ingresar git clone https://github.com/lylyzyta/P_works.git
 + npm start.
-
-
-
 
 ##### 5. URL del repositorio git (Github, Gitlab, Bitbucket)
 [Interfaz](https://github.com/lylyzyta/P_works)
